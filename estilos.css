@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200;1,500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Poppins', 'Times New Roman', Times, serif ;
+  scroll-behavior: smooth;
+}
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+}
+/*container principal com o tamanho e alinhando ao centro os itens dele*/
+.container{
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.section_title {
+  font-size: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #990000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+/* Barra de navegação*/
+ nav ul{
+  margin: auto;
+  width: 470px;
+}
+.navbar nav{
+  height: 70px;
+  width: 100%;
+}
+
+.navbar ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid red;
+  margin: 15px;
+}
+.navbar ul li:hover {
+  background-color: red;
+  transform: translateY(5px);
+}
+.navbar a {
+  padding: 10px 3px;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+/*imagem de background e posicionamento dela*/
+#presentation {
+  background-image: url(backgroundatual.jpg);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+}
+/*Apresentação*/
+#presentation h1 {
+  display: block;
+  width: fit-content;
+  font-size: 5rem;
+  position: relative;
+  color: transparent;
+  padding: 5px;
+  animation: text_reveal .5s ease forwards;
+  animation-delay: 1.5s;
+}
+#presentation h1:nth-child(1) {
+  animation-delay: 0.8s;
+}
+#presentation h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#presentation h1:nth-child(3) {
+  animation: text_reveal_name .5s ease forwards;
+
+  animation-delay: 3s;
+
+}
+/*Estilização do botao*/
+#presentation .cta {
+  margin: 4%;
+  display: inline-block;
+  padding: 10px 30px;
+  color: red;
+  border: 1px solid red;
+  background-color: transparent;
+  font-size: 2rem;
+  text-transform: uppercase;
+  transition: .5s ease;
+}
+#presentation .cta:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+#presentation h1 span {
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  animation: text_reveal_box 1s ease;
+  animation-delay: .5s;
+  background-color: red;
+}
+
+#presentation h1:nth-child(1) span {
+  animation-delay: .5s;
+}
+#presentation h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#presentation h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+/*Filtro para a imagem*/
+#presentation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/*Seção do portifólio*/
+
+#portifolio .portifolio{
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+#portifolio.container {
+  padding-top: 100px
+}
+
+.portifolio .header {
+  margin: auto;
+  font-size: 7rem;
+}
+
+#portifolio .all_projects{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+#portifolio .project_item {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ margin: 20px auto;
+ overflow: hidden;
+ border-radius: 10px;
+  width: 80%;
+}
+
+#portifolio .project_info {
+  padding: 30px;
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, #b51010 0%, #490200 100%);
+  color: white;
+}
+#portifolio .project_info h1{
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+#portifolio .project_info h2{
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+#portifolio .project_img {
+  flex-basis: 50%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+#portifolio .project_img:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  opacity: 0.7;
+}
+#portifolio .project_img img{
+  transition: 0.5s ease transform;
+}
+#portifolio .project_item:hover .project_img img{
+  transform: scale(1.1);
+}
+
+/*Rodapé*/
+
+#rodape {
+  background-color: #29323c;
+  max-height:550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#rodape p {
+  position: relative;
+  top: 80px;
+  right: 70px;
+}
+
+
+#rodape .imagem {
+  width: 190px;
+  padding: 10px;
+
+}
+#rodape ul {
+  margin-left: 100px;
+  list-style: none;
+ 
+}
+
+
+#rodape p {
+  color: white;
+}
+#rodape ul li a {
+  color: white;
+  font-size: large;
+  text-transform: uppercase;
+}
+#rodape a:hover {
+  color: red;
+}
+
+
+/*KEYFRAMES*/
+@keyframes text_reveal {
+  100% {
+    color:white;
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: red;
+    font-weight: 500px;
+  }
+}
+@keyframes text_reveal_box {
+  50%{
+    width: 100%;
+    left:0
+  }
+  100% {
+    width: 0;
+    left:100%;
+  }
+}
+/* Media Query */
+@media only screen and (min-width: 768px) {
+  #portifolio .project_item {
+      flex-direction: row;
+      height: 400px;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+  }
+  #portifolio .all_projects .project_info{
+      height: 100%
+  }
+  #portifolio .all_projects .project_img{
+      height: 100%
+  }
+  #portifolio .project_item:nth-child(even) {
+      flex-direction: row-reverse;
+  }
+
+  #rodape .imagem {
+    max-width: 120px;
+  }
+  #rodape ul li{
+    display: inline-block;
+    margin: 10px;
+   }
+  #rodape  p {
+    position: inherit;
+  }
+ 
+  #rodape, .footer, .footer ul {
+    display: flex;
+    align-items:center ;
+    justify-content: space-around;
+    }
+  }
